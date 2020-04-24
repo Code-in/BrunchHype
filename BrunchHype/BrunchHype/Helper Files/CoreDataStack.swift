@@ -17,12 +17,11 @@ class CoreDataStack {
         let container = NSPersistentContainer(name: appName)
         container.loadPersistentStores() { (storeDescription, error) in
             if let error = error as NSError? {
-                fatalError("Unresolved error \(error), \(error.userInfo)")
+                fatalError("BrunchHypeCoreData unresolved error \(error), \(error.userInfo)")
         }
     }
     return container
 }()
-
     static var context: NSManagedObjectContext { return container.viewContext }
 }
 
